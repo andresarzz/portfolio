@@ -770,7 +770,7 @@ export default function Portfolio() {
                       <Mail className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Email</h3>
-                    <p className="text-gray-600 dark:text-gray-400">andres.araya.dev@gmail.com</p>
+                    <p className="text-gray-600 dark:text-gray-400">aara28312@gmail.com</p>
                   </div>
 
                   <div className="text-center group">
@@ -792,7 +792,7 @@ export default function Portfolio() {
                       <Phone className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Teléfono</h3>
-                    <p className="text-gray-600 dark:text-gray-400">+506 XXXX-XXXX</p>
+                    <p className="text-gray-600 dark:text-gray-400">+506 8853-8999</p>
                   </div>
                 </div>
 
@@ -803,7 +803,7 @@ export default function Portfolio() {
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Button
                       size="lg"
-                      onClick={() => window.open("mailto:andres.araya.dev@gmail.com", "_blank")}
+                      onClick={() => window.open("mailto:aara28312@gmail.com", "_blank")}
                       className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8"
                     >
                       <Mail className="w-5 h-5 mr-2" />
@@ -849,7 +849,7 @@ export default function Portfolio() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  onClick={() => window.open("mailto:andres.araya.dev@gmail.com", "_blank")}
+                  onClick={() => window.open("mailto:aara28312@gmail.com", "_blank")}
                   className="hover:bg-gray-100 dark:hover:bg-gray-800"
                 >
                   <Mail className="w-5 h-5" />
@@ -894,7 +894,7 @@ export default function Portfolio() {
 
           <div className="border-t border-gray-200 dark:border-gray-700 pt-8 text-center">
             <p className="text-gray-600 dark:text-gray-400">
-              © 2024 Andrés Araya. Desarrollado con ❤️ usando Next.js, TypeScript y Tailwind CSS.
+              © 2024 Andrés Araya. Desarrollado usando Next.js, TypeScript y Tailwind CSS.
             </p>
           </div>
         </div>
