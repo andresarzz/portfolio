@@ -67,8 +67,8 @@ const projects = [
     name: "Glossa Lesco Translator",
     description:
       "Traductor de lenguaje de señas costarricense usando inteligencia artificial, visión por computadora y ML",
-    tech: ["Python", "TensorFlow", "OpenCV", "Flask", "MediaPipe", "AI/ML"],
-    repo: "andresarzz/glossa-lesco-translator",
+    tech: ["Next.js", "React 18", "Tailwind CSS", "shadcn/ui", "AI/ML"],
+    repo: "andresarzz/glossa-app",
     featured: true,
     category: "AI/ML",
     color: "from-orange-500 to-red-500",
