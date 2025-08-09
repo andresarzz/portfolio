@@ -174,7 +174,7 @@ const projects = [
     color: "from-yellow-500 to-amber-500",
   },
   {
-    name: "XAnderXZ",
+    name: "Proyectos personales",
     description: "Proyecto personal de desarrollo de herramientas web innovadoras y utilidades avanzadas",
     tech: ["JavaScript", "HTML5", "CSS3", "API REST", "LocalStorage"],
     repo: "andresarzz/XAnderXZ",
