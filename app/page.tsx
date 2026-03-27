@@ -1,45 +1,41 @@
 "use client"
 
-import { useEffect, useMemo, useRef, useState } from "react"
-import { motion } from "framer-motion"
+import { useEffect, useMemo, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import {
-  Github,
-  Mail,
-  Code,
-  Database,
-  Server,
-  Smartphone,
-  Moon,
-  Sun,
-  MapPin,
-  GraduationCap,
-  User,
-  Briefcase,
-  Star,
-  ExternalLink,
-  Menu,
-  X,
-  Phone,
-  ArrowRight,
-  Zap,
-  Rocket,
   Award,
-  Target,
-  Sparkles,
-  ShieldCheck,
-  FolderKanban,
-  Globe,
+  ArrowRight,
+  Briefcase,
+  Code,
   Cpu,
+  Database,
+  FolderKanban,
+  Github,
+  Globe,
+  GraduationCap,
+  Mail,
+  MapPin,
+  Menu,
+  Moon,
+  Phone,
+  Server,
+  ShieldCheck,
+  Smartphone,
+  Sparkles,
+  Star,
+  Sun,
+  Target,
+  User,
+  X,
 } from "lucide-react"
 
 const projects = [
   {
     name: "NetWatchApp",
     description:
-      "Real-time network monitoring platform with live dashboards, alerting workflows, and data visualization for infrastructure tracking.",
+      "Real-time network monitoring platform with live dashboards, automated alerting workflows, and visual infrastructure insights.",
     tech: ["React", "Node.js", "MongoDB", "Express", "WebSocket", "Chart.js"],
     repo: "andresarzz/NetWatchApp",
     featured: true,
@@ -48,8 +44,8 @@ const projects = [
   {
     name: "Glossa Lesco Translator",
     description:
-      "Costa Rican sign language translation project powered by AI concepts, modern frontend architecture, and accessible interface design.",
-    tech: ["Next.js", "React", "Tailwind CSS", "TypeScript", "AI/ML"],
+      "Accessibility-focused project for Costa Rican sign language translation using modern frontend architecture and AI-oriented concepts.",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "AI/ML"],
     repo: "andresarzz/glossa-app",
     featured: true,
     category: "AI Project",
@@ -57,7 +53,7 @@ const projects = [
   {
     name: "SistemaPermisos",
     description:
-      "Role and permission management system with administrative controls, secure access handling, and scalable backend structure.",
+      "Role and permission management system with secure access control, administrative workflows, and scalable backend structure.",
     tech: ["Laravel", "Vue.js", "MySQL", "JWT", "Redis"],
     repo: "andresarzz/SistemaPermisos",
     featured: true,
@@ -66,7 +62,7 @@ const projects = [
   {
     name: "GestionPeliculas",
     description:
-      "Full movie management system with CRUD operations, JWT authentication, review workflows, and recommendation logic.",
+      "Movie management system with CRUD operations, JWT authentication, review workflows, and recommendation logic.",
     tech: ["PHP", "MySQL", "JavaScript", "Bootstrap", "jQuery"],
     repo: "andresarzz/GestionPeliculas",
     featured: true,
@@ -75,7 +71,7 @@ const projects = [
   {
     name: "ProgramacionAvanzadaWeb",
     description:
-      "Academic web application built with backend architecture, database integration, and maintainable MVC patterns.",
+      "Academic web application built with MVC structure, database integration, and maintainable backend patterns.",
     tech: ["ASP.NET", "C#", "SQL Server", "Entity Framework", "MVC"],
     repo: "andresarzz/ProgramacionAvanzadaWeb",
     featured: false,
@@ -84,7 +80,7 @@ const projects = [
   {
     name: "ControlMigracion",
     description:
-      "Migration control system focused on record management, validation logic, reporting, and secure information handling.",
+      "Migration control system focused on record management, business validation, reporting, and secure data handling.",
     tech: ["Java", "Spring Boot", "MySQL", "JPA", "Thymeleaf"],
     repo: "andresarzz/ControlMigracion",
     featured: false,
@@ -119,17 +115,17 @@ const highlights = [
   {
     icon: Briefcase,
     title: "DataOps Experience",
-    description: "Hands-on internship experience at TransUnion supporting data-related workflows and operational processes.",
+    description: "Internship experience at TransUnion supporting data-related workflows in a corporate environment.",
   },
   {
     icon: Code,
     title: "Full Stack Development",
-    description: "Experience building web applications from frontend interfaces to backend logic and database integration.",
+    description: "Hands-on experience building web applications across frontend, backend, and database layers.",
   },
   {
     icon: Target,
-    title: "Job-Ready Mindset",
-    description: "Focused on writing clean code, learning fast, collaborating well, and delivering practical business solutions.",
+    title: "Career Focus",
+    description: "Motivated to contribute in junior software, QA automation, or backend-oriented roles and keep growing fast.",
   },
 ]
 
@@ -143,9 +139,9 @@ const stats = [
 function AnimatedBackground() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      <div className="absolute top-20 left-10 h-72 w-72 rounded-full blur-3xl bg-blue-500/20" />
-      <div className="absolute top-40 right-10 h-72 w-72 rounded-full blur-3xl bg-purple-500/20" />
-      <div className="absolute bottom-10 left-1/3 h-72 w-72 rounded-full blur-3xl bg-cyan-500/20" />
+      <div className="absolute top-16 left-6 h-72 w-72 rounded-full bg-blue-500/15 blur-3xl" />
+      <div className="absolute top-28 right-8 h-72 w-72 rounded-full bg-violet-500/15 blur-3xl" />
+      <div className="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-cyan-500/15 blur-3xl" />
     </div>
   )
 }
@@ -160,12 +156,10 @@ function SectionTitle({
   subtitle: string
 }) {
   return (
-    <div className="text-center max-w-3xl mx-auto mb-14">
-      <p className="text-sm font-semibold tracking-[0.2em] uppercase text-blue-600 dark:text-blue-400 mb-3">
-        {eyebrow}
-      </p>
-      <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">{title}</h2>
-      <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">{subtitle}</p>
+    <div className="mx-auto mb-14 max-w-3xl text-center animate-fade-in-up">
+      <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">{eyebrow}</p>
+      <h2 className="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white md:text-5xl">{title}</h2>
+      <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-400">{subtitle}</p>
     </div>
   )
 }
@@ -208,21 +202,22 @@ export default function PortfolioPremium() {
   }
 
   const featuredProjects = projects.filter((project) => project.featured)
+  const otherProjects = projects.filter((project) => !project.featured)
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 dark:bg-[#09090b] dark:text-white transition-colors duration-300">
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-gray-200/70 dark:border-white/10 bg-white/80 dark:bg-[#09090b]/80 backdrop-blur-xl">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <button onClick={() => scrollToSection("home")} className="font-bold text-lg tracking-tight">
+    <div className="min-h-screen bg-white text-gray-900 transition-colors duration-300 dark:bg-[#09090b] dark:text-white">
+      <nav className="fixed left-0 right-0 top-0 z-50 border-b border-gray-200/70 bg-white/80 backdrop-blur-xl dark:border-white/10 dark:bg-[#09090b]/80">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          <button onClick={() => scrollToSection("home")} className="text-lg font-bold tracking-tight">
             Andrés Araya
           </button>
 
-          <div className="hidden md:flex items-center gap-2">
+          <div className="hidden items-center gap-2 md:flex">
             {sections.map((section) => (
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition ${
+                className={`rounded-full px-4 py-2 text-sm font-medium transition ${
                   activeSection === section
                     ? "bg-gray-900 text-white dark:bg-white dark:text-black"
                     : "text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
@@ -234,24 +229,30 @@ export default function PortfolioPremium() {
           </div>
 
           <div className="flex items-center gap-2">
-            <Button variant="ghost" size="icon" onClick={() => setDarkMode((prev) => !prev)}>
+            <Button variant="ghost" size="icon" onClick={() => setDarkMode((prev) => !prev)} aria-label="Toggle theme">
               {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
 
-            <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setMobileMenuOpen((prev) => !prev)}>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden"
+              onClick={() => setMobileMenuOpen((prev) => !prev)}
+              aria-label="Toggle menu"
+            >
               {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </div>
         </div>
 
         {mobileMenuOpen && (
-          <div className="md:hidden px-4 pb-4">
-            <div className="rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-[#111113] p-3 flex flex-col gap-2">
+          <div className="px-4 pb-4 md:hidden">
+            <div className="flex flex-col gap-2 rounded-2xl border border-gray-200 bg-white p-3 dark:border-white/10 dark:bg-[#111113]">
               {sections.map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className="text-left px-3 py-2 rounded-xl hover:bg-gray-100 dark:hover:bg-white/5"
+                  className="rounded-xl px-3 py-2 text-left hover:bg-gray-100 dark:hover:bg-white/5"
                 >
                   {section.charAt(0).toUpperCase() + section.slice(1)}
                 </button>
@@ -261,64 +262,53 @@ export default function PortfolioPremium() {
         )}
       </nav>
 
-      <section
-        id="home"
-        className="relative pt-28 md:pt-36 pb-20 md:pb-28 overflow-hidden border-b border-gray-200 dark:border-white/10"
-      >
+      <section id="home" className="relative overflow-hidden border-b border-gray-200 pt-28 pb-20 dark:border-white/10 md:pt-36 md:pb-28">
         <AnimatedBackground />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="inline-flex items-center rounded-full border border-blue-200 dark:border-blue-400/20 bg-blue-50 dark:bg-blue-500/10 px-4 py-2 text-sm font-medium text-blue-700 dark:text-blue-300 mb-6">
-                <Sparkles className="w-4 h-4 mr-2" />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid items-center gap-14 lg:grid-cols-2">
+            <div className="animate-fade-in-up">
+              <div className="mb-6 inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700 dark:border-blue-400/20 dark:bg-blue-500/10 dark:text-blue-300">
+                <Sparkles className="mr-2 h-4 w-4" />
                 Junior Full Stack Developer • Software Engineering Student
               </div>
 
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] mb-6">
+              <h1 className="mb-6 text-5xl font-bold leading-[0.95] tracking-tight md:text-7xl">
                 Building modern web solutions with clean code and real-world impact.
               </h1>
 
-              <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl mb-8">
+              <p className="mb-8 max-w-2xl text-lg leading-relaxed text-gray-600 dark:text-gray-400 md:text-xl">
                 Software Engineering student with 2+ years of experience building web applications, working with
                 databases, and developing backend and frontend solutions. Internship experience in DataOps at
                 TransUnion, with a strong interest in scalable systems, software quality, and business-focused
                 development.
               </p>
 
-              <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-8">
+              <div className="mb-8 flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
                 <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4" />
+                  <MapPin className="h-4 w-4" />
                   Costa Rica
                 </div>
                 <div className="flex items-center gap-2">
-                  <GraduationCap className="w-4 h-4" />
+                  <GraduationCap className="h-4 w-4" />
                   Software Engineering Student
                 </div>
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4" />
+                  <ShieldCheck className="h-4 w-4" />
                   DataOps Internship at TransUnion
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="lg"
-                  className="rounded-2xl px-6"
-                  onClick={() => scrollToSection("projects")}
-                >
+              <div className="flex flex-col gap-4 sm:flex-row">
+                <Button size="lg" className="rounded-2xl px-6" onClick={() => scrollToSection("projects")}>
                   View Projects
-                  <ArrowRight className="w-4 h-4 ml-2" />
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
 
                 <Button
                   variant="outline"
                   size="lg"
-                  className="rounded-2xl px-6 bg-transparent"
+                  className="rounded-2xl bg-transparent px-6"
                   onClick={() => scrollToSection("contact")}
                 >
                   Contact Me
@@ -330,30 +320,26 @@ export default function PortfolioPremium() {
                   className="rounded-2xl px-6"
                   onClick={() => window.open("https://github.com/andresarzz", "_blank")}
                 >
-                  <Github className="w-4 h-4 mr-2" />
+                  <Github className="mr-2 h-4 w-4" />
                   GitHub
                 </Button>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-            >
-              <div className="rounded-[32px] border border-gray-200 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur-xl shadow-2xl p-6 md:p-8">
-                <div className="rounded-[28px] bg-gradient-to-br from-gray-900 to-gray-700 dark:from-white/10 dark:to-white/5 p-8">
-                  <div className="flex items-center justify-between mb-10">
+            <div className="animate-fade-in-up" style={{ animationDelay: "0.15s" }}>
+              <div className="rounded-[32px] border border-gray-200 bg-white/70 p-6 shadow-2xl backdrop-blur-xl dark:border-white/10 dark:bg-white/5 md:p-8">
+                <div className="rounded-[28px] bg-gradient-to-br from-gray-900 to-gray-700 p-8 dark:from-white/10 dark:to-white/5">
+                  <div className="mb-10 flex items-center justify-between">
                     <div>
-                      <p className="text-white/70 text-sm">Profile Snapshot</p>
-                      <h3 className="text-white text-2xl font-semibold">Andrés Araya</h3>
+                      <p className="text-sm text-white/70">Profile Snapshot</p>
+                      <h3 className="text-2xl font-semibold text-white">Andrés Araya</h3>
                     </div>
-                    <div className="h-16 w-16 rounded-2xl bg-white/10 flex items-center justify-center">
-                      <User className="w-8 h-8 text-white" />
+                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10">
+                      <User className="h-8 w-8 text-white" />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4 mb-8">
+                  <div className="mb-8 grid grid-cols-2 gap-4">
                     {stats.map((stat) => (
                       <div key={stat.label} className="rounded-2xl bg-white/10 p-4">
                         <p className="text-2xl font-bold text-white">{stat.value}</p>
@@ -365,59 +351,52 @@ export default function PortfolioPremium() {
                   <div className="space-y-3">
                     {["React / Next.js", "Node.js / Express", "SQL / NoSQL Databases", "Python / PHP / Java"].map(
                       (item) => (
-                        <div
-                          key={item}
-                          className="flex items-center justify-between rounded-2xl bg-white/10 px-4 py-3 text-white"
-                        >
+                        <div key={item} className="flex items-center justify-between rounded-2xl bg-white/10 px-4 py-3 text-white">
                           <span>{item}</span>
-                          <Star className="w-4 h-4 text-yellow-300" />
+                          <Star className="h-4 w-4 text-yellow-300" />
                         </div>
                       ),
                     )}
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="about" className="py-20 md:py-28 border-b border-gray-200 dark:border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="about" className="border-b border-gray-200 py-20 dark:border-white/10 md:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionTitle
             eyebrow="About"
             title="A developer focused on growth, execution, and real value."
             subtitle="I am building my career around software development, practical problem solving, and strong technical foundations across modern web technologies."
           />
 
-          <div className="grid lg:grid-cols-3 gap-6">
+          <div className="grid gap-6 lg:grid-cols-3">
             {highlights.map((item, index) => (
-              <motion.div
+              <Card
                 key={item.title}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
+                className="h-full rounded-3xl border-gray-200 shadow-sm animate-fade-in-up dark:border-white/10"
+                style={{ animationDelay: `${index * 0.08}s` }}
               >
-                <Card className="rounded-3xl border-gray-200 dark:border-white/10 shadow-sm h-full">
-                  <CardHeader>
-                    <div className="w-12 h-12 rounded-2xl bg-blue-100 dark:bg-blue-500/10 flex items-center justify-center mb-4">
-                      <item.icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                    </div>
-                    <CardTitle className="text-xl">{item.title}</CardTitle>
-                    <CardDescription className="text-base leading-relaxed">{item.description}</CardDescription>
-                  </CardHeader>
-                </Card>
-              </motion.div>
+                <CardHeader>
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 dark:bg-blue-500/10">
+                    <item.icon className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                  </div>
+                  <CardTitle className="text-xl">{item.title}</CardTitle>
+                  <CardDescription className="text-base leading-relaxed">{item.description}</CardDescription>
+                </CardHeader>
+              </Card>
             ))}
           </div>
 
-          <div className="mt-10 grid lg:grid-cols-2 gap-8">
+          <div className="mt-10 grid gap-8 lg:grid-cols-2">
             <Card className="rounded-3xl border-gray-200 dark:border-white/10">
               <CardHeader>
                 <CardTitle className="text-2xl">Professional Summary</CardTitle>
               </CardHeader>
-              <CardContent className="text-gray-600 dark:text-gray-400 leading-relaxed text-base space-y-4">
+              <CardContent className="space-y-4 text-base leading-relaxed text-gray-600 dark:text-gray-400">
                 <p>
                   I have experience building academic and personal software projects using technologies such as React,
                   Next.js, Node.js, PHP, Laravel, Java, ASP.NET, and SQL-based databases.
@@ -440,10 +419,10 @@ export default function PortfolioPremium() {
               </CardHeader>
               <CardContent className="space-y-4">
                 {[
-                  "Strong willingness to learn and adapt fast",
+                  "Strong willingness to learn and adapt quickly",
                   "Hands-on experience with full stack project development",
                   "Exposure to data operations in a corporate environment",
-                  "Good technical communication and structured thinking",
+                  "Clear technical communication and structured thinking",
                   "Commitment to clean, readable, and scalable code",
                 ].map((point) => (
                   <div key={point} className="flex items-start gap-3">
@@ -457,207 +436,186 @@ export default function PortfolioPremium() {
         </div>
       </section>
 
-      <section id="skills" className="py-20 md:py-28 border-b border-gray-200 dark:border-white/10 bg-gray-50/70 dark:bg-white/[0.02]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="skills" className="border-b border-gray-200 bg-gray-50/70 py-20 dark:border-white/10 dark:bg-white/[0.02] md:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionTitle
             eyebrow="Skills"
             title="Technical stack built for modern development."
             subtitle="A solid base across frontend, backend, data, and development tools."
           />
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid gap-6 md:grid-cols-2">
             {skillGroups.map((group, index) => (
-              <motion.div
+              <Card
                 key={group.title}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.35, delay: index * 0.08 }}
+                className="h-full rounded-3xl border-gray-200 animate-fade-in-up dark:border-white/10"
+                style={{ animationDelay: `${index * 0.08}s` }}
               >
-                <Card className="rounded-3xl border-gray-200 dark:border-white/10 h-full">
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-3 text-xl">
-                      <div className="w-11 h-11 rounded-2xl bg-gray-900 dark:bg-white text-white dark:text-black flex items-center justify-center">
-                        <group.icon className="w-5 h-5" />
-                      </div>
-                      {group.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="flex flex-wrap gap-2">
-                    {group.items.map((skill) => (
-                      <Badge key={skill} variant="secondary" className="rounded-full px-3 py-1 text-sm">
-                        {skill}
-                      </Badge>
-                    ))}
-                  </CardContent>
-                </Card>
-              </motion.div>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-3 text-xl">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gray-900 text-white dark:bg-white dark:text-black">
+                      <group.icon className="h-5 w-5" />
+                    </div>
+                    {group.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-wrap gap-2">
+                  {group.items.map((skill) => (
+                    <Badge key={skill} variant="secondary" className="rounded-full px-3 py-1 text-sm">
+                      {skill}
+                    </Badge>
+                  ))}
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="projects" className="py-20 md:py-28 border-b border-gray-200 dark:border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="projects" className="border-b border-gray-200 py-20 dark:border-white/10 md:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionTitle
             eyebrow="Projects"
             title="Selected work that reflects my technical growth."
             subtitle="Projects that showcase web development, backend structure, data handling, and software problem solving."
           />
 
-          <div className="grid lg:grid-cols-2 gap-6 mb-12">
+          <div className="mb-12 grid gap-6 lg:grid-cols-2">
             {featuredProjects.map((project, index) => (
-              <motion.div
+              <Card
                 key={project.name}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.35, delay: index * 0.08 }}
+                className="h-full overflow-hidden rounded-3xl border-gray-200 animate-fade-in-up dark:border-white/10"
+                style={{ animationDelay: `${index * 0.08}s` }}
               >
-                <Card className="rounded-3xl border-gray-200 dark:border-white/10 h-full overflow-hidden">
-                  <CardHeader className="pb-4">
-                    <div className="flex items-start justify-between gap-4 mb-3">
-                      <div>
-                        <div className="flex items-center gap-2 mb-2">
-                          <Badge className="rounded-full">Featured</Badge>
-                          <Badge variant="secondary" className="rounded-full">
-                            {project.category}
-                          </Badge>
-                        </div>
-                        <CardTitle className="text-2xl">{project.name}</CardTitle>
-                      </div>
-                      <div className="w-11 h-11 rounded-2xl bg-gray-100 dark:bg-white/5 flex items-center justify-center">
-                        <FolderKanban className="w-5 h-5" />
-                      </div>
-                    </div>
-                    <CardDescription className="text-base leading-relaxed">{project.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.tech.map((tech) => (
-                        <Badge key={tech} variant="outline" className="rounded-full">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-
-                    <div className="flex gap-3">
-                      <Button
-                        className="rounded-2xl"
-                        onClick={() => window.open(`https://github.com/${project.repo}`, "_blank")}
-                      >
-                        <Github className="w-4 h-4 mr-2" />
-                        View Repository
-                      </Button>
-
-                      <Button
-                        variant="outline"
-                        className="rounded-2xl bg-transparent"
-                        onClick={() => window.open(`https://github.com/${project.repo}`, "_blank")}
-                      >
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Open
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-            {projects
-              .filter((project) => !project.featured)
-              .map((project, index) => (
-                <motion.div
-                  key={project.name}
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.35, delay: index * 0.06 }}
-                >
-                  <Card className="rounded-3xl border-gray-200 dark:border-white/10 h-full">
-                    <CardHeader>
-                      <div className="flex items-center justify-between mb-2">
+                <CardHeader className="pb-4">
+                  <div className="mb-3 flex items-start justify-between gap-4">
+                    <div>
+                      <div className="mb-2 flex items-center gap-2">
+                        <Badge className="rounded-full">Featured</Badge>
                         <Badge variant="secondary" className="rounded-full">
                           {project.category}
                         </Badge>
-                        <Globe className="w-4 h-4 text-gray-500" />
                       </div>
-                      <CardTitle className="text-lg">{project.name}</CardTitle>
-                      <CardDescription className="leading-relaxed">{project.description}</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="flex flex-wrap gap-2 mb-5">
-                        {project.tech.slice(0, 4).map((tech) => (
-                          <Badge key={tech} variant="outline" className="rounded-full">
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
+                      <CardTitle className="text-2xl">{project.name}</CardTitle>
+                    </div>
+                    <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gray-100 dark:bg-white/5">
+                      <FolderKanban className="h-5 w-5" />
+                    </div>
+                  </div>
+                  <CardDescription className="text-base leading-relaxed">{project.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="mb-6 flex flex-wrap gap-2">
+                    {project.tech.map((tech) => (
+                      <Badge key={tech} variant="outline" className="rounded-full">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
 
-                      <Button
-                        variant="outline"
-                        className="w-full rounded-2xl bg-transparent"
-                        onClick={() => window.open(`https://github.com/${project.repo}`, "_blank")}
-                      >
-                        View Project
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
+                  <div className="flex gap-3">
+                    <Button className="rounded-2xl" onClick={() => window.open(`https://github.com/${project.repo}`, "_blank")}>
+                      <Github className="mr-2 h-4 w-4" />
+                      View Repository
+                    </Button>
+
+                    <Button
+                      variant="outline"
+                      className="rounded-2xl bg-transparent"
+                      onClick={() => window.open(`https://github.com/${project.repo}`, "_blank")}
+                    >
+                      <Globe className="mr-2 h-4 w-4" />
+                      Open
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {otherProjects.map((project, index) => (
+              <Card
+                key={project.name}
+                className="h-full rounded-3xl border-gray-200 animate-fade-in-up dark:border-white/10"
+                style={{ animationDelay: `${index * 0.06}s` }}
+              >
+                <CardHeader>
+                  <div className="mb-2 flex items-center justify-between">
+                    <Badge variant="secondary" className="rounded-full">
+                      {project.category}
+                    </Badge>
+                    <Globe className="h-4 w-4 text-gray-500" />
+                  </div>
+                  <CardTitle className="text-lg">{project.name}</CardTitle>
+                  <CardDescription className="leading-relaxed">{project.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="mb-5 flex flex-wrap gap-2">
+                    {project.tech.slice(0, 4).map((tech) => (
+                      <Badge key={tech} variant="outline" className="rounded-full">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+
+                  <Button
+                    variant="outline"
+                    className="w-full rounded-2xl bg-transparent"
+                    onClick={() => window.open(`https://github.com/${project.repo}`, "_blank")}
+                  >
+                    View Project
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
       <section id="contact" className="py-20 md:py-28">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <SectionTitle
             eyebrow="Contact"
             title="Let’s connect and build something valuable."
             subtitle="I am open to junior developer roles, internships, QA automation opportunities, and software-related positions."
           />
 
-          <Card className="rounded-[32px] border-gray-200 dark:border-white/10 overflow-hidden">
+          <Card className="overflow-hidden rounded-[32px] border-gray-200 dark:border-white/10">
             <CardContent className="p-8 md:p-10">
-              <div className="grid md:grid-cols-3 gap-6 mb-8">
-                <div className="rounded-3xl bg-gray-50 dark:bg-white/5 p-6">
-                  <Mail className="w-6 h-6 mb-4 text-blue-600 dark:text-blue-400" />
-                  <h3 className="font-semibold text-lg mb-2">Email</h3>
-                  <p className="text-gray-600 dark:text-gray-400 break-all">aara28312@gmail.com</p>
+              <div className="mb-8 grid gap-6 md:grid-cols-3">
+                <div className="rounded-3xl bg-gray-50 p-6 dark:bg-white/5">
+                  <Mail className="mb-4 h-6 w-6 text-blue-600 dark:text-blue-400" />
+                  <h3 className="mb-2 text-lg font-semibold">Email</h3>
+                  <p className="break-all text-gray-600 dark:text-gray-400">aara28312@gmail.com</p>
                 </div>
 
-                <div className="rounded-3xl bg-gray-50 dark:bg-white/5 p-6">
-                  <Phone className="w-6 h-6 mb-4 text-blue-600 dark:text-blue-400" />
-                  <h3 className="font-semibold text-lg mb-2">Phone</h3>
+                <div className="rounded-3xl bg-gray-50 p-6 dark:bg-white/5">
+                  <Phone className="mb-4 h-6 w-6 text-blue-600 dark:text-blue-400" />
+                  <h3 className="mb-2 text-lg font-semibold">Phone</h3>
                   <p className="text-gray-600 dark:text-gray-400">+506 8853-8999</p>
                 </div>
 
-                <div className="rounded-3xl bg-gray-50 dark:bg-white/5 p-6">
-                  <Github className="w-6 h-6 mb-4 text-blue-600 dark:text-blue-400" />
-                  <h3 className="font-semibold text-lg mb-2">GitHub</h3>
+                <div className="rounded-3xl bg-gray-50 p-6 dark:bg-white/5">
+                  <Github className="mb-4 h-6 w-6 text-blue-600 dark:text-blue-400" />
+                  <h3 className="mb-2 text-lg font-semibold">GitHub</h3>
                   <p className="text-gray-600 dark:text-gray-400">@andresarzz</p>
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  size="lg"
-                  className="rounded-2xl px-6"
-                  onClick={() => window.open("mailto:aara28312@gmail.com", "_blank")}
-                >
-                  <Mail className="w-4 h-4 mr-2" />
+              <div className="flex flex-col justify-center gap-4 sm:flex-row">
+                <Button size="lg" className="rounded-2xl px-6" onClick={() => window.open("mailto:aara28312@gmail.com", "_blank")}>
+                  <Mail className="mr-2 h-4 w-4" />
                   Send Email
                 </Button>
 
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-2xl px-6 bg-transparent"
+                  className="rounded-2xl bg-transparent px-6"
                   onClick={() => window.open("https://github.com/andresarzz", "_blank")}
                 >
-                  <Github className="w-4 h-4 mr-2" />
+                  <Github className="mr-2 h-4 w-4" />
                   View GitHub
                 </Button>
               </div>
@@ -666,13 +624,11 @@ export default function PortfolioPremium() {
         </div>
       </section>
 
-      <footer className="border-t border-gray-200 dark:border-white/10 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-sm text-gray-600 dark:text-gray-400">
-            © 2026 Andrés Araya. Built with Next.js, TypeScript, Tailwind CSS, and ambition.
-          </p>
-          <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-            <Award className="w-4 h-4" />
+      <footer className="border-t border-gray-200 py-8 dark:border-white/10">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 text-sm text-gray-600 dark:text-gray-400 sm:px-6 lg:flex-row lg:px-8">
+          <p>© 2026 Andrés Araya. Built with Next.js, TypeScript, Tailwind CSS, and ambition.</p>
+          <div className="flex items-center gap-2">
+            <Award className="h-4 w-4" />
             Based in Costa Rica
           </div>
         </div>
