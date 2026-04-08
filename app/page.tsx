@@ -33,13 +33,13 @@ import {
 
 const projects = [
   {
-    name: "NetWatchApp",
+    name: "QA Validation Testing",
     description:
-      "Real-time network monitoring platform with live dashboards, automated alerting workflows, and visual infrastructure insights.",
-    tech: ["React", "Node.js", "MongoDB", "Express", "WebSocket", "Chart.js"],
-    repo: "andresarzz/NetWatchApp",
+      "Python-based QA validation project that simulates real-world testing workflows, including data validation, bug detection, and automated test cases using pytest.",
+    tech: ["Python", "Pytest", "Data Validation", "Testing", "Automation"],
+    repo: "andresarzz/testing-practice",
     featured: true,
-    category: "Monitoring",
+    category: "Quality Assurance",
   },
   {
     name: "Glossa Lesco Translator",
